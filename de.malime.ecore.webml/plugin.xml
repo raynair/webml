@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.malime.de/webml"
+            class="de.malime.ecore.webml.WebmlPackage"
+            genModel="model/Webml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="webml"
+            class="de.malime.ecore.webml.util.WebmlResourceFactoryImpl"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            class="de.malime.ecore.webml.util.WebmlResourceFactoryImpl"
+            type="xml">
+      </parser>
+   </extension>
+   <extension
+         id="de.malime.ecore.webml"
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.xml"
+            default-charset="UTF-8"
+            file-extensions="xml,webml"
+            id="de.malime.ecore.webml.content-type"
+            name="Web Navigationsmenü"
+            priority="normal">
+         <describer
+               class="org.eclipse.core.runtime.content.XMLRootElementContentDescriber2">
+            <parameter
+                  name="element"
+                  value="web">
+            </parameter>
+         </describer>
+      </content-type>
+   </extension>
+
+</plugin>

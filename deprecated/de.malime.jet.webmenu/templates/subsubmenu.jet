@@ -1,0 +1,56 @@
+<%@taglib id="org.eclipse.jet.controlTags" prefix="c"%>
+<%@taglib id="org.eclipse.jet.workspaceTags" prefix="ws"%>
+<%@taglib id="de.malime.jet.taglibs.webTags" prefix="mt"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<HEAD>
+<META http-equiv="Content-Language" content="de">
+<META http-equiv="Content-Style-Type" content="text/css">
+<META http-equiv="CONTENT-LANGUAGE" content="de">
+<META name="keywords" content='<c:get select="$currSubsubmenu/@keywords"/>'>
+<META name="description" content='<c:get select="$currSubsubmenu/@description"/>'>
+<LINK href='<mt:relative from="$currSubsubmenu/@file" to="theme/malime.css"/>' rel="stylesheet" type="text/css">
+<title><mt:utf8 utf8="$currMenu/@name"/> - <mt:utf8 utf8="$currSubmenu/@name"/>  - <mt:utf8 utf8="$currSubsubmenu/@name"/></title>
+<c:userRegion>
+<!-- BEGIN META of <c:get select="$currSubsubmenu/@file"/> -->
+<c:initialCode>
+<!-- Hier koennen eigene Informationen eingebaut werden -->
+</c:initialCode>
+<!-- END META of <c:get select="$currSubsubmenu/@file"/> -->
+</c:userRegion>
+</head>
+<body style="width:760px;margin:0px auto;text-align:center;">
+<div id="menu">
+  <ul>
+  <c:iterate select="/web/menu" var="menuPage">
+    <li><c:if test="$currMenu/@file = $menuPage/@file"><div id='reading'></c:if><a href='<mt:relative from="$currSubsubmenu/@file" to="$menuPage/@file"/>'><span><mt:utf8 utf8="$menuPage/@name"/></span></a><c:if test="$currMenu/@file = $menuPage/@file"></div></c:if></li>
+  </c:iterate>
+  </ul>
+</div>
+<div id="submenu">
+   <ul>
+     <c:iterate select="$currMenu/submenu" var="submenuPage"><li><c:if test="$currSubmenu/@file = $submenuPage/@file"><div id='reading'></c:if><a href='<mt:relative from="$currSubsubmenu/@file" to="$submenuPage/@file"/>'><span><mt:utf8 utf8="$submenuPage/@name"/></span></a><c:if test="$currSubmenu/@file = $submenuPage/@file"></div></c:if></li></c:iterate>
+   </ul>
+  <c:if test="cardinality($currSubmenu/subsubmenu,'1M') = 'true'">
+</div>
+<div id="subsubmenu">
+     <ul><c:iterate select="$currSubmenu/subsubmenu" var="subsubmenuPage">
+       <c:choose>
+         <c:when test="$currSubsubmenu/@file = $subsubmenuPage/@file"><li><div id='selected'><span><mt:utf8 utf8="$subsubmenuPage/@name"/></span></div></li></c:when>
+         <c:otherwise><li><a href='<mt:relative from="$currSubsubmenu/@file" to="$subsubmenuPage/@file"/>'><span><mt:utf8 utf8="$subsubmenuPage/@name"/></span></a></li></c:otherwise>
+       </c:choose>
+     </c:iterate>
+    </ul>
+  </c:if>
+</div id="subsubmenu">
+<div id="content">
+  <c:userRegion>
+  <!-- BEGIN Content of <c:get select="$currSubsubmenu/@file"/> -->
+  <c:initialCode>
+	  Hier der Inhalt für <mt:utf8 utf8="$currSubsubmenu/@name"/> einzugeben!
+  </c:initialCode>
+  <!-- END Content of <c:get select="$currSubsubmenu/@file"/> -->
+  </c:userRegion>
+</div>
+</body>
+</html>

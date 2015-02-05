@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="compile" name="de.malime.acceleo.webmenu">
+    
+    <property name="ECLIPSE_HOME" value="C:/IBM/SDP"/>
+    <property name="ECLIPSE_WORKSPACE" value=".."/>
+
+<!-- 
+Start of user code to add new properties
+-->
+    <!-- You can add new properties here but do not touch the previous and following comments.-->
+    <property name="SOURCE_FOLDER" value="${basedir}/src/"/>    
+    <property name="OUTPUT_FOLDER" value="${basedir}/bin/"/>
+<!-- 
+End of user code
+-->
+
+
+
+    <!--
+         If deleted, this file will be recreated with a full build (Project -> Clean...).
+    -->
+
+
+    <!-- The classpath with only the dependencies used by the project -->
+    <path id="de.malime.acceleo.webmenu.libraryclasspath">
+        <pathelement location="${ECLIPSE_WORKSPACE}/de.malime.acceleo.webmenu/bin"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/vm.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/annotation.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/beans.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/java.util.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/jndi.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/logging.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/security.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/sql.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ibmorb.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ibmorbapi.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ibmcfw.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/rt.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/charsets.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/resources.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ibmpkcs.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ibmcertpathfw.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ibmjgssfw.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ibmjssefw.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ibmsaslfw.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ibmjcefw.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ibmjgssprovider.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ibmjsseprovider2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ibmcertpathprovider.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ibmxmlcrypto.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/management-agent.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/xml.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/jlm.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/javascript.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/CmpCrmf.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/dnsns.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/dtfj-interface.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/dtfj.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/dtfjview.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/gskikm.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/healthcenter.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/ibmcmsprovider.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/ibmjcefips.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/ibmjceprovider.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/ibmkeycert.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/IBMKeyManagementServer.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/ibmpkcs11impl.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/ibmsaslprovider.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/IBMSecureRandom.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/ibmxmlencprovider.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/jaccess.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/JavaDiagnosticsCollector.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/JawBridge.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/jdmpview.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/localedata.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/jdk/jre/lib/ext/xmlencfw.jar"/>
+    </path>
+
+
+    <path id="de.malime.acceleo.webmenu.classpath">
+        <path refid="de.malime.acceleo.webmenu.libraryclasspath" />
+    </path>
+    
+    <taskdef id="acceleoCompiler" name="acceleoCompiler" classname="org.eclipse.acceleo.parser.compiler.AcceleoCompiler" classpathref="de.malime.acceleo.webmenu.classpath" >
+    </taskdef>
+
+    <!-- Change the value of the property SOURCE_FOLDERS to match the configuration of your project. -->
+    <target name="compile">
+        <acceleoCompiler sourceFolder="${SOURCE_FOLDER}"
+                         outputFolder="${OUTPUT_FOLDER}"
+                         dependencies=""
+                         binaryResource="true">
+        </acceleoCompiler>
+    </target>
+
+
+<!-- 
+Start of user code to add new targets
+-->
+    <!-- You can add new targets here but do not touch the previous and following comments.-->
+<!-- 
+End of user code
+-->
+
+</project>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="webml" xmlns:web="webml" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="web">
+    <xsd:complexType>
+   		<xsd:sequence>
+        	<xsd:element maxOccurs="unbounded" minOccurs="0" ref="web:meta"/>
+        	<xsd:element maxOccurs="unbounded" ref="web:menu"/>
+      	</xsd:sequence>
+     	<xsd:attribute name="theme" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="meta">
+    <xsd:complexType>
+      <xsd:attribute name="name" type="xsd:string"/>
+      <xsd:attribute name="value" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="menu">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="web:meta"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="web:submenu"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="web:page"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" type="xsd:string"/>
+      <xsd:attribute name="file" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="submenu">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="web:meta"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="web:subsubmenu"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="web:page"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" type="xsd:string"/>
+      <xsd:attribute name="file" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="subsubmenu">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="web:meta"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="web:page"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" type="xsd:string"/>
+      <xsd:attribute name="file" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="page">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="web:meta"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" type="xsd:string"/>
+      <xsd:attribute name="file" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

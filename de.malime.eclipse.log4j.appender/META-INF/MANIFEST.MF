@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Log4J Appender
+Bundle-SymbolicName: de.malime.eclipse.log4j.appender;singleton:=true
+Bundle-Version: 1.0.0.vqualifier
+Bundle-Vendor: malime.de
+Fragment-Host: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.ui.console,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources

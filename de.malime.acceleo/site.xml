@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/de.malime.acceleo.feature_3.5.1.vqualifier.jar" id="de.malime.acceleo.feature" version="3.5.1.vqualifier">
+      <category name="WebML"/>
+   </feature>
+   <feature url="features/de.malime.acceleo.feature.source_3.5.1.vqualifier.jar" id="de.malime.acceleo.feature.source" version="3.5.1.vqualifier">
+      <category name="WebML"/>
+   </feature>
+   <category-def name="WebML" label="WebMenü"/>
+</site>

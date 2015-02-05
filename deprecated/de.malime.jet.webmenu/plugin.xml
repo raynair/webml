@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension
+         id="de.malime.jet.webmenu"
+         name="Sitemenu Generator"
+         point="org.eclipse.jet.transform">
+      <transform
+            private="false"
+            startTemplate="templates/web.jet"
+            templateLoaderClass="org.eclipse.jet.compiled._jet_transformation">
+         <description></description>
+         <tagLibraries>
+            <importLibrary id="org.eclipse.jet.controlTags" usePrefix="c" autoImport="true"/>
+            <importLibrary id="org.eclipse.jet.workspaceTags" usePrefix="ws" autoImport="true"/>
+            <importLibrary
+                  autoImport="true"
+                  id="de.malime.jet.taglibs.webTags"
+                  usePrefix="mt"/>
+         </tagLibraries>
+      </transform>
+   </extension>
+</plugin>

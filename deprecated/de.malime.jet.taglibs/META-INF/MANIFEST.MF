@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Jet TagLibraries
+Bundle-SymbolicName: de.malime.jet.taglibs;singleton:=true
+Bundle-Version: 7.0.5.v20080922-1655
+Bundle-Activator: de.malime.jet.taglibs.Activator
+Bundle-Vendor: malime
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.jet,
+ org.eclipse.core.resources
+Export-Package: de.malime.jet.taglibs
+Eclipse-LazyStart: true

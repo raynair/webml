@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: malime Acceleo Core
+Bundle-SymbolicName: de.malime.acceleo.core
+Bundle-Version: 3.3.2.vqualifier
+Require-Bundle: org.eclipse.core.runtime,
+ org.apache.log4j,
+ org.eclipse.emf.ecore,
+ org.eclipse.ui.console
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: de.malime.acceleo.core
