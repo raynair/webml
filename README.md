@@ -9,7 +9,7 @@ file webmenu.webml
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <webml:web xmlns:webml="http://www.malime.de/webml" theme="theme/malime.css">
-  <webml:meta name="keywords" value="IBM,Rational Software,RSA,RSM,RFT,RTC,jazz.net,MDA,MBD,MDD,eclipse,plugins,features"/>
+  <webml:meta name="keywords" value="eclipse,plugins,features"/>
   <webml:meta name="description" value="Auf diesen Seiten befinden sich Informationen ueber malime"/>
   <webml:menu file="index.html" name="malime.de"/>
 </webml:web>
