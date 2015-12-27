@@ -1,0 +1,12 @@
+<%@taglib id="org.eclipse.jet.controlTags" prefix="c"%>
+<%@taglib id="org.eclipse.jet.workspaceTags" prefix="ws"%>
+<%@taglib id="de.malime.jet.taglibs.webTags" prefix="mt"%>
+<c:iterate select="/web/menu" var="currMenu">
+	<ws:file template="templates/menu.jet" path="{$org.eclipse.jet.resource.project.name}/WebContent/{$currMenu/@file}"/>
+	<c:iterate select="$currMenu/submenu" var="currSubmenu">
+		<ws:file template="templates/submenu.jet" path="{$org.eclipse.jet.resource.project.name}/WebContent/{$currSubmenu/@file}"/>
+		<c:iterate select="$currSubmenu/subsubmenu" var="currSubsubmenu">
+			<ws:file template="templates/subsubmenu.jet" path="{$org.eclipse.jet.resource.project.name}/WebContent/{$currSubsubmenu/@file}"/>
+		</c:iterate>
+	</c:iterate>
+</c:iterate>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         id="de.malime.jet.malimeTags"
+         name="Tags von malime.de"
+         point="org.eclipse.jet.tagLibraries">
+      <tagLibrary
+            deprecated="false"
+            id="webTags"
+            name="malime.de Web Tags"
+            standardPrefix="mt">
+         <emptyTag
+               class="de.malime.jet.taglibs.webmenu.RelativeNavigationTag"
+               deprecated="false"
+               name="relative"
+               whenContainingLineIsEmpty="preserve">
+            <attribute
+                  deprecated="false"
+                  name="from"
+                  type="string"
+                  use="required"/>
+            <attribute
+                  deprecated="false"
+                  name="to"
+                  type="string"
+                  use="required"/>
+         </emptyTag>
+         <emptyTag
+               class="de.malime.jet.taglibs.webmenu.HTMLEntityTag"
+               deprecated="false"
+               name="utf8"
+               whenContainingLineIsEmpty="preserve">
+            <attribute
+                  deprecated="false"
+                  name="utf8"
+                  type="string"
+                  use="required"/>
+         </emptyTag>
+      </tagLibrary>
+   </extension>
+</plugin>

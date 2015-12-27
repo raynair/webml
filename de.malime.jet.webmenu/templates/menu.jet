@@ -1,0 +1,55 @@
+<%@taglib id="org.eclipse.jet.controlTags" prefix="c"%>
+<%@taglib id="org.eclipse.jet.workspaceTags" prefix="ws"%>
+<%@taglib id="de.malime.jet.taglibs.webTags" prefix="mt"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<HEAD>
+<META http-equiv="Content-Style-Type" content="text/css">
+<META name="keywords" content='<c:get select="$currMenu/@keywords"/>'>
+<META name="description" content='<c:get select="$currMenu/@description"/>'>
+<META http-equiv="Content-Language" content="de">
+<META http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<LINK href='<mt:relative from="$currMenu/@file" to="theme/malime.css"/>' rel="stylesheet" type="text/css">
+<title><mt:utf8 utf8="$currMenu/@name"/></title>
+<c:userRegion>
+<!-- BEGIN META of <c:get select="$currMenu/@file"/> -->
+<c:initialCode>
+<!-- Hier koennen eigene Informationen eingebaut werden -->
+</c:initialCode>
+<!-- END META of <c:get select="$currMenu/@file"/> -->
+</c:userRegion>
+</head>
+<body style="width:760px;margin:0px auto;text-align:center;">
+<div id="menu">
+  <ul>
+  <c:iterate select="/web/menu" var="menuPage">
+    <c:choose>
+    <c:when test="$currMenu/@file = $menuPage/@file">
+  	   <li><div id='selected'><span><mt:utf8 utf8="$menuPage/@name"/></span></div></li>
+    </c:when>
+    <c:otherwise>
+  	   <li><a href='<mt:relative from="$currMenu/@file" to="$menuPage/@file"/>'><span><mt:utf8 utf8="$menuPage/@name"/></span></a></li>
+    </c:otherwise>
+    </c:choose>
+  </c:iterate>
+  </ul>
+  <c:if test="cardinality($currMenu/submenu,'1M') = 'true'">
+  </div>
+    <div id="submenu">
+    <ul><c:iterate select="$currMenu/submenu" var="currSubmenu">
+       <li><a href='<mt:relative from="$currMenu/@file" to="$currSubmenu/@file"/>'><span><mt:utf8 utf8="$currSubmenu/@name"/></span></a></li>
+     </c:iterate>
+    </ul>
+  </c:if>
+</div>
+<div id="content">
+  <c:userRegion>
+  <!-- BEGIN Content of <c:get select="$currMenu/@file"/> -->
+  <c:initialCode>
+	  Hier der Inhalt für <mt:utf8 utf8="$currMenu/@name"/> einzugeben!
+  </c:initialCode>
+  <!-- END Content of <c:get select="$currMenu/@file"/> -->
+  </c:userRegion>
+</div>
+</body>
+</html>
