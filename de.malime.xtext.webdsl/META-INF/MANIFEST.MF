@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: de.malime.xtext.webdsl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: de.malime.xtext.webdsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: de.malime.xtext.webdsl.parser.antlr,
+ de.malime.xtext.webdsl,
+ de.malime.xtext.webdsl.generator,
+ de.malime.xtext.webdsl.webDsl.util,
+ de.malime.xtext.webdsl.webDsl,
+ de.malime.xtext.webdsl.scoping,
+ de.malime.xtext.webdsl.validation,
+ de.malime.xtext.webdsl.services,
+ de.malime.xtext.webdsl.webDsl.impl,
+ de.malime.xtext.webdsl.serializer,
+ de.malime.xtext.webdsl.parser.antlr.internal
+Import-Package: org.apache.log4j

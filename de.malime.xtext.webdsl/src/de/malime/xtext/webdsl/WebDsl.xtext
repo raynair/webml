@@ -1,0 +1,31 @@
+grammar de.malime.xtext.webdsl.WebDsl with org.eclipse.xtext.common.Terminals
+
+generate webDsl "http://www.malime.de/xtext/webdsl/WebDsl"
+
+Web:
+	'theme' theme=STRING
+	meta+=Meta*
+	menu+=Menu*;
+	
+Meta:
+	'meta' name=ID '=' value=STRING;
+	
+Menu:
+	'menu' name=STRING
+	page=Page
+	submenu+=Submenu*;
+	
+Submenu:
+	'submenu' name=STRING
+	page=Page
+	subsubmenu+=Subsubmenu*;
+
+Subsubmenu:
+	'subsubmenu' name=STRING
+	meta+=Meta*
+	page=Page;
+
+Page:
+	'(' file=STRING ')'
+	meta+=Meta*;
+	
